@@ -45,7 +45,7 @@ const Hero: FC<HeroProps> = ({ description, buttonText }) => {
       </div>
 
       {/* Imagem de fundo - Carregamento atrasado */}
-      <Image
+      {/* <Image
         src={images.backgroundHome}
         alt=""
         width={1920}
@@ -68,7 +68,7 @@ const Hero: FC<HeroProps> = ({ description, buttonText }) => {
         }}
         aria-hidden="true"
         priority={false}
-      />
+      /> */}
     </div>
   );
 };

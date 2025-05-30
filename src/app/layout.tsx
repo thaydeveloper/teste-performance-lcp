@@ -106,11 +106,37 @@ export default function RootLayout({
     <html lang="pt-BR">
       <Head>
         <link rel="preconnect" href="https://vercel.live" />
+        {/* Removido o preload da imagem para não competir com o LCP do texto */}
+        {/* 
         <link
           rel="preload"
           as="image"
           href="/assets/images/background-home.webp"
           type="image/webp"
+        />
+        */}
+        {/* Preload da fonte para garantir que o texto carregue rapidamente */}
+        <link
+          rel="preload"
+          href="../fonts/Roboto-Bold.woff2"
+          as="font"
+          type="font/woff2"
+          crossOrigin="anonymous"
+        />
+        <style
+          dangerouslySetInnerHTML={{
+            __html: `
+            h1 {
+              font-display: swap;
+              text-rendering: optimizeSpeed;
+              -webkit-font-smoothing: antialiased;
+            }
+            .hero-container {
+              contain: layout style paint;
+              content-visibility: visible;
+            }
+          `,
+          }}
         />
         <SchemaBreadcrumb />
       </Head>
