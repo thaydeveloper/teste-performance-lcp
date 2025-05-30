@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://www.esimtravelglobal.com
+
+# Sitemaps
+Sitemap: https://www.esimtravelglobal.com/sitemap.xml

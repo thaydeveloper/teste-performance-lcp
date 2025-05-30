@@ -1,0 +1,136 @@
+import { SelectOption } from '@/shared/SelectCard/select.interface';
+
+export const estadosBrasileiros: SelectOption[] = [
+  { id: 'SP', label: 'São Paulo', value: 'SP' },
+  { id: 'RJ', label: 'Rio de Janeiro', value: 'RJ' },
+  { id: 'MG', label: 'Minas Gerais', value: 'MG' },
+  { id: 'ES', label: 'Espírito Santo', value: 'ES' },
+  { id: 'BA', label: 'Bahia', value: 'BA' },
+  { id: 'CE', label: 'Ceará', value: 'CE' },
+  { id: 'PE', label: 'Pernambuco', value: 'PE' },
+  { id: 'PR', label: 'Paraná', value: 'PR' },
+  { id: 'RS', label: 'Rio Grande do Sul', value: 'RS' },
+  { id: 'SC', label: 'Santa Catarina', value: 'SC' },
+  { id: 'GO', label: 'Goiás', value: 'GO' },
+  { id: 'MT', label: 'Mato Grosso', value: 'MT' },
+  { id: 'MS', label: 'Mato Grosso do Sul', value: 'MS' },
+  { id: 'AL', label: 'Alagoas', value: 'AL' },
+  { id: 'AM', label: 'Amazonas', value: 'AM' },
+  { id: 'AP', label: 'Amapá', value: 'AP' },
+  { id: 'PA', label: 'Pará', value: 'PA' },
+  { id: 'PB', label: 'Paraíba', value: 'PB' },
+  { id: 'PI', label: 'Piauí', value: 'PI' },
+  { id: 'RN', label: 'Rio Grande do Norte', value: 'RN' },
+  { id: 'RO', label: 'Rondônia', value: 'RO' },
+  { id: 'RR', label: 'Roraima', value: 'RR' },
+  { id: 'SE', label: 'Sergipe', value: 'SE' },
+  { id: 'TO', label: 'Tocantins', value: 'TO' },
+  { id: 'DF', label: 'Distrito Federal', value: 'DF' },
+];
+
+export const dddsMap = {
+  AC: [{ id: '68', label: '(68) Acre', value: '68' }],
+  AL: [{ id: '82', label: '(82) Alagoas', value: '82' }],
+  AP: [{ id: '96', label: '(96) Amapá', value: '96' }],
+  AM: [
+    { id: '92', label: '(92) Amazonas', value: '92' },
+    { id: '97', label: '(97) Amazonas', value: '97' },
+  ],
+  BA: [
+    { id: '71', label: '(71) Bahia', value: '71' },
+    { id: '73', label: '(73) Bahia', value: '73' },
+    { id: '74', label: '(74) Bahia', value: '74' },
+    { id: '75', label: '(75) Bahia', value: '75' },
+    { id: '77', label: '(77) Bahia', value: '77' },
+  ],
+  CE: [
+    { id: '85', label: '(85) Ceará', value: '85' },
+    { id: '88', label: '(88) Ceará', value: '88' },
+  ],
+  DF: [{ id: '61', label: '(61) Distrito Federal', value: '61' }],
+  ES: [
+    { id: '27', label: '(27) Espírito Santo', value: '27' },
+    { id: '28', label: '(28) Espírito Santo', value: '28' },
+  ],
+  GO: [
+    { id: '62', label: '(62) Goiás', value: '62' },
+    { id: '64', label: '(64) Goiás', value: '64' },
+  ],
+  MA: [
+    { id: '98', label: '(98) Maranhão', value: '98' },
+    { id: '99', label: '(99) Maranhão', value: '99' },
+  ],
+  MT: [
+    { id: '65', label: '(65) Mato Grosso', value: '65' },
+    { id: '66', label: '(66) Mato Grosso', value: '66' },
+  ],
+  MS: [{ id: '67', label: '(67) Mato Grosso do Sul', value: '67' }],
+  MG: [
+    { id: '31', label: '(31) Belo Horizonte', value: '31' },
+    { id: '32', label: '(32) Juiz de Fora', value: '32' },
+    { id: '33', label: '(33) Minas Gerais', value: '33' },
+    { id: '34', label: '(34) Minas Gerais', value: '34' },
+    { id: '35', label: '(35) Minas Gerais', value: '35' },
+    { id: '37', label: '(37) Minas Gerais', value: '37' },
+    { id: '38', label: '(38) Minas Gerais', value: '38' },
+  ],
+  PA: [
+    { id: '91', label: '(91) Pará', value: '91' },
+    { id: '93', label: '(93) Pará', value: '93' },
+    { id: '94', label: '(94) Pará', value: '94' },
+  ],
+  PB: [{ id: '83', label: '(83) Paraíba', value: '83' }],
+  PR: [
+    { id: '41', label: '(41) Paraná', value: '41' },
+    { id: '42', label: '(42) Paraná', value: '42' },
+    { id: '43', label: '(43) Paraná', value: '43' },
+    { id: '44', label: '(44) Paraná', value: '44' },
+    { id: '45', label: '(45) Paraná', value: '45' },
+    { id: '46', label: '(46) Paraná', value: '46' },
+  ],
+  PE: [
+    { id: '81', label: '(81) Pernambuco', value: '81' },
+    { id: '87', label: '(87) Pernambuco', value: '87' },
+  ],
+  PI: [
+    { id: '86', label: '(86) Piauí', value: '86' },
+    { id: '89', label: '(89) Piauí', value: '89' },
+  ],
+  RJ: [
+    { id: '21', label: '(21) Rio de Janeiro', value: '21' },
+    { id: '22', label: '(22) Campos dos Goytacazes', value: '22' },
+    { id: '24', label: '(24) Rio de Janeiro', value: '24' },
+  ],
+  RN: [{ id: '84', label: '(84) Rio Grande do Norte', value: '84' }],
+  RS: [
+    { id: '51', label: '(51) Rio Grande do Sul', value: '51' },
+    { id: '53', label: '(53) Rio Grande do Sul', value: '53' },
+    { id: '54', label: '(54) Rio Grande do Sul', value: '54' },
+    { id: '55', label: '(55) Rio Grande do Sul', value: '55' },
+  ],
+  RO: [{ id: '69', label: '(69) Rondônia', value: '69' }],
+  RR: [{ id: '95', label: '(95) Roraima', value: '95' }],
+  SC: [
+    { id: '47', label: '(47) Santa Catarina', value: '47' },
+    { id: '48', label: '(48) Santa Catarina', value: '48' },
+    { id: '49', label: '(49) Santa Catarina', value: '49' },
+  ],
+  SP: [
+    { id: '11', label: '(11) São Paulo', value: '11' },
+    { id: '12', label: '(12) São José dos Campos', value: '12' },
+    { id: '13', label: '(13) São Paulo', value: '13' },
+    { id: '14', label: '(14) São Paulo', value: '14' },
+    { id: '15', label: '(15) São Paulo', value: '15' },
+    { id: '16', label: '(16) São Paulo', value: '16' },
+    { id: '17', label: '(17) São Paulo', value: '17' },
+    { id: '18', label: '(18) São Paulo', value: '18' },
+    { id: '19', label: '(19) São Paulo', value: '19' },
+  ],
+  SE: [{ id: '79', label: '(79) Sergipe', value: '79' }],
+  TO: [{ id: '63', label: '(63) Tocantins', value: '63' }],
+};
+
+export const operatorOptions = [
+  { value: 'claro', label: 'Claro' },
+  { value: 'vivo', label: 'Vivo' },
+];
