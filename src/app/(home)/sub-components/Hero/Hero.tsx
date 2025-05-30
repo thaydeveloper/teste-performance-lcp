@@ -28,10 +28,11 @@ const Hero: FC<HeroProps> = ({ description, buttonText }) => {
         }}
       >
         <div className="w-full h-auto rounded-[50px] py-0 flex flex-col justify-center items-center">
-          <h1 className="pb-2 text-4xl font-bold md:text-5xl leading-[1.2]">
+          <h1 className="pb-2 text-4xl font-bold md:text-5xl leading-[1.2] whitespace-nowrap">
             Bem-vindo a eSimFácil!
           </h1>
-          <p className="mb-8 text-white sm:mb-16 text-2xl md:text-xl max-w-[80%]">{description}</p>
+
+          <p className="mb-8 text-white sm:mb-16 text-base md:text-xl max-w-[80%]">{description}</p>
         </div>
         <div className="w-full md:w-[680px] flex flex-col md:flex-row gap-4 md:gap-10 p-0 justify-center items-center">
           {buttonText.map((btn, index) => (
