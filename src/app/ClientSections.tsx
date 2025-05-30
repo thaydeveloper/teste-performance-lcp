@@ -9,12 +9,7 @@ const Advantages = dynamic(() => import('./(home)/sub-components/Advantages/Adva
 const Devices = dynamic(() => import('./(home)/sub-components/Devices/Devices.container'), {
   ssr: false,
 });
-const Statements = dynamic(
-  () => import('./(home)/sub-components/Statements/Statements.container'),
-  {
-    ssr: false,
-  },
-);
+
 const NewEsim = dynamic(() => import('./(home)/sub-components/NewEsim/NewEsim'), { ssr: false });
 const ChipChange = dynamic(() => import('./(home)/sub-components/ChipChange/ChipChange'), {
   ssr: false,
@@ -49,11 +44,6 @@ export default function ClientSections() {
             <ChipChange />
           </SectionFactory>
         </div>
-      </div>
-      <div className="relative mx-auto shadow-xl">
-        <SectionFactory id="statements" className="h-[650px] md:h-[660px]">
-          <Statements />
-        </SectionFactory>
       </div>
     </>
   );
