@@ -25,8 +25,10 @@ const Footer: FC = () => {
               width={150}
               height={50}
               loading="lazy"
-              fetchPriority="auto"
+              fetchPriority="low"
               decoding="async"
+              quality={75}
+              sizes="(max-width: 768px) 100px, 150px"
             />
           </div>
 

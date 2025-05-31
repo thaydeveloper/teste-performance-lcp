@@ -16,20 +16,13 @@ const Hero: FC<HeroProps> = ({ description, buttonText }) => {
       }}
     >
       {/* Texto do Hero - Otimizado para ser o LCP */}
-      <div
-        className="w-full max-w-[791px] pt-[50px] absolute sm:top-[290px] left-1/2 transform -translate-x-1/2 rounded-[50px] flex flex-col justify-center items-center text-center text-white z-10"
-        style={{
-          // Garante que o conteúdo de texto seja grande e priorizado
-          fontSize: 'clamp(1.5rem, 5vw, 2.5rem)',
-          fontWeight: 'bold',
-          // Adiciona um sombreamento para garantir contraste mesmo após imagem carregar
-          textShadow: '0 2px 10px rgba(0,0,0,0.7)',
-          padding: '1rem',
-        }}
-      >
+      <div className="w-full max-w-[791px] pt-[50px] flex flex-col justify-center items-center text-center text-white z-10">
         <div className="w-full h-auto rounded-[50px] py-0 flex flex-col justify-center items-center">
-          <h1 className="pb-2 text-4xl font-bold md:text-5xl leading-[1.2] whitespace-nowrap">
+          <h1 className="pb-2 text-2xl font-bold md:text-5xl leading-[1.2] sm:whitespace-normal whitespace-wrap text-center">
             Bem-vindo a eSimFácil!
+          </h1>
+          <h1 className="pb-2 text-2xl font-bold md:text-5xl leading-[1.2] sm:whitespace-normal whitespace-wrap text-center">
+            A Nº1 do Brasil em ativação de eSIM
           </h1>
 
           <p className="mb-8 text-white sm:mb-16 text-base md:text-xl max-w-[80%]">{description}</p>
@@ -45,16 +38,15 @@ const Hero: FC<HeroProps> = ({ description, buttonText }) => {
         </div>
       </div>
 
-      {/* Imagem de fundo - Carregamento atrasado */}
-      {/* <Image
+      {/* Imagem de fundo - Otimizada */}
+      <Image
         src={images.backgroundHome}
-        alt=""
+        alt="Background da página inicial"
         width={1920}
         height={1080}
-        quality={60}
-        // Configurações para atrasar o carregamento da imagem:
-        loading="lazy"
-        fetchPriority="low" // Explicitamente baixa prioridade
+        quality={75}
+        priority={true}
+        fetchPriority="high"
         decoding="async"
         sizes="100vw"
         style={{
@@ -64,12 +56,12 @@ const Hero: FC<HeroProps> = ({ description, buttonText }) => {
           left: 0,
           width: '100%',
           height: '100%',
-          zIndex: 0, // Abaixo do z-10 do texto
-          opacity: 0.9, // Ligeiramente transparente para melhorar legibilidade do texto
+          zIndex: 0,
+          opacity: 0.9,
         }}
-        aria-hidden="true"
-        priority={false}
-      /> */}
+        placeholder="blur"
+        blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPhAAAts9YWVogAAAAAAAA9tYAAQAAAADTLXBhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADb/2wBDABQODxIPDRQSEBIXFRQdHx4eHRoaHSQtJSEkMjU1LS0yMi4qLjg0PjU4OjpAQEBAPj4+QEBAPj4+QEBAPj4+QED/2wBDAR4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh7/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAb/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCdABmX/9k="
+      />
     </div>
   );
 };
