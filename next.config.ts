@@ -72,7 +72,6 @@ const nextConfig: NextConfig = {
   },
   reactStrictMode: true,
   productionBrowserSourceMaps: isAnalyze || isProduction,
-  swcMinify: true,
   experimental: {
     optimizeCss: true,
     optimizePackageImports: ['@vercel/analytics', 'react-query'],
