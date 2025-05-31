@@ -1,6 +1,5 @@
 'use client';
 import { useState, useCallback, useRef, useEffect } from 'react'; //
-import { Carousel } from 'react-responsive-carousel';
 import { AdvantagesCardProps } from './Advantages.interface';
 
 export interface UseAdvantagesCarouselProps {
@@ -9,7 +8,7 @@ export interface UseAdvantagesCarouselProps {
 
 export const useAdvantagesCarousel = ({ advantages }: UseAdvantagesCarouselProps) => {
   const [currentSlide, setCurrentSlide] = useState(0);
-  const carouselRef = useRef<Carousel | null>(null);
+  const carouselRef = useRef(null);
   const isTransitioning = useRef(false);
 
   const handleCarouselChange = useCallback((index: number) => {
