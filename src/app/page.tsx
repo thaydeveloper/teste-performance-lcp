@@ -6,16 +6,20 @@ import { Footer } from '@/shared';
 import SectionFactory from '@/factories/SectionFactory';
 import { FC } from 'react';
 import ClientSections from './ClientSections';
+import Head from 'next/head';
 
 const Home: FC = () => {
   return (
     <div className="relative">
-      <SectionFactory className={` bg-cover bg-center bg-no-repeat `} id="hero">
+      <Head>
+        <script src="/insights/script.js" defer />
+      </Head>
+      <SectionFactory className={`bg-cover bg-center bg-no-repeat`} id="hero">
         <Hero />
       </SectionFactory>
       {/* Sessões dinâmicas */}
       <ClientSections />
-      <div className="mx-auto ">
+      <div className="mx-auto">
         <SectionFactory id="footer">
           <Footer />
         </SectionFactory>
