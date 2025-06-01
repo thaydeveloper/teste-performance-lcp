@@ -1,5 +1,13 @@
 import { DeviceBrand } from './DevicesCompatible.interface';
-import { icons } from '@shared/assets';
+import appleInc from '@public/assets/icons/apple-Inc.webp';
+import android from '@public/assets/icons/android.webp';
+import colors from '@public/assets/icons/colors.webp';
+import huawei from '@public/assets/icons/huawei.webp';
+import oxygen from '@public/assets/icons/oxygen.webp';
+import xiaomi from '@public/assets/icons/xiaomi.webp';
+import microsoft from '@public/assets/icons/microsoft.webp';
+import playStation from '@public/assets/icons/play-station.webp';
+import Infinity from '@public/assets/icons/Infinity.webp';
 
 export const DEVICES_COMPATIBLE_TITLE = 'Dispositivos Compatíveis com eSIM!';
 
@@ -10,7 +18,7 @@ export const COMPATIBLE_DEVICES: DeviceBrand[] = [
   {
     id: 'apple',
     name: 'APPLE',
-    icon: icons.appleInc,
+    icon: appleInc.src,
     series: [
       {
         id: 'iphone-16',
@@ -42,7 +50,7 @@ export const COMPATIBLE_DEVICES: DeviceBrand[] = [
   {
     id: 'android',
     name: 'ANDROID',
-    icon: icons.android,
+    icon: android.src,
     series: [
       {
         id: 'galaxy',
@@ -74,7 +82,7 @@ export const COMPATIBLE_DEVICES: DeviceBrand[] = [
   {
     id: 'color-os',
     name: 'COLOR OS',
-    icon: icons.colors,
+    icon: colors.src,
     series: [
       {
         id: 'oppo-find',
@@ -91,7 +99,7 @@ export const COMPATIBLE_DEVICES: DeviceBrand[] = [
   {
     id: 'huawei',
     name: 'HUAWEI',
-    icon: icons.huawei,
+    icon: huawei.src,
     series: [
       {
         id: 'huawei-mate',
@@ -108,7 +116,7 @@ export const COMPATIBLE_DEVICES: DeviceBrand[] = [
   {
     id: 'oxygen-os',
     name: 'OXYGEN OS',
-    icon: icons.oxygen,
+    icon: oxygen.src,
     series: [
       {
         id: 'oneplus-11',
@@ -135,7 +143,7 @@ export const COMPATIBLE_DEVICES: DeviceBrand[] = [
   {
     id: 'xiaomi',
     name: 'XIAOMI',
-    icon: icons.xiaomi,
+    icon: xiaomi.src,
     series: [
       {
         id: 'xiaomi-13',
@@ -162,7 +170,7 @@ export const COMPATIBLE_DEVICES: DeviceBrand[] = [
   {
     id: 'microsoft',
     name: 'MICROSOFT SURFACE',
-    icon: icons.microsoft,
+    icon: microsoft.src,
     series: [
       {
         id: 'surface-pro',
@@ -179,7 +187,7 @@ export const COMPATIBLE_DEVICES: DeviceBrand[] = [
   {
     id: 'sony',
     name: 'SONY',
-    icon: icons.playStation,
+    icon: playStation.src,
     series: [
       {
         id: 'xperia-1',
@@ -201,7 +209,7 @@ export const COMPATIBLE_DEVICES: DeviceBrand[] = [
   {
     id: 'outros',
     name: 'OUTROS',
-    icon: icons.Infinity,
+    icon: Infinity.src,
     series: [
       {
         id: 'nokia',

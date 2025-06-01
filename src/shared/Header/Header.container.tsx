@@ -2,7 +2,8 @@
 import dynamic from 'next/dynamic';
 import { Suspense } from 'react';
 import { FC, useState, useCallback } from 'react';
-import { images } from '@shared/assets';
+import mainLogo2 from '@public/assets/images/main-logo2.webp';
+
 import { NavItem } from './Header.interface';
 import { navItems } from '@/constants/nav.constants';
 import { useScrollSpy } from '@/hooks/useScrollSpy';
@@ -70,7 +71,7 @@ const HeaderContainer: FC = () => {
     <Suspense fallback={<div className="h-[80px] bg-white animate-pulse" />}>
       <Header
         navItems={navItems}
-        mark={images.mainLogo2}
+        mark={mainLogo2}
         activeSection={activeSection}
         mobileOpen={mobileOpen}
         setMobileOpen={setMobileOpen}

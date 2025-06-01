@@ -2,9 +2,8 @@
 
 import { FC, useState } from 'react';
 
-import { icons } from '@shared/assets';
 import { FAQCard } from '@/shared/FaqCard';
-
+import openCard from '@public/assets/icons/open-card.webp';
 import { FAQProps } from '@/shared/FaqCard/FAQCard.interface';
 
 const FAQ: FC<FAQProps> = ({ data }) => {
@@ -40,7 +39,7 @@ const FAQ: FC<FAQProps> = ({ data }) => {
               onToggle={() => handleToggle(index)}
               showSidebar={true}
               showShadow={true}
-              icon={icons.openCard}
+              icon={openCard}
             />
           ))}
         </div>

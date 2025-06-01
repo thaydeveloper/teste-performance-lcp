@@ -1,15 +1,18 @@
-import { icons } from '@shared/assets';
+import appleInc from '@public/assets/icons/apple-Inc.webp';
+import android from '@public/assets/icons/android.webp';
+import google from '@public/assets/icons/google.webp';
+
 export const brandDetails = {
   APPLE: {
-    logo: icons.appleInc,
+    logo: appleInc,
     alt: 'Apple Logo',
   },
   ANDROID: {
-    logo: icons.android,
+    logo: android,
     alt: 'Android Logo',
   },
   GOOGLE: {
-    logo: icons.google,
+    logo: google,
     alt: 'Google Logo',
   },
 };

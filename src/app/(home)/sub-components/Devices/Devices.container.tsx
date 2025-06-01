@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import Devices from './Devices';
-import { icons } from '@shared/assets';
+
 import { Device } from './Devices.interface';
 
 const devicesData: Device[] = [

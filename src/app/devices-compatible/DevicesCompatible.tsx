@@ -2,7 +2,8 @@
 import { FC } from 'react';
 import Image from 'next/image';
 
-import { images, icons } from '@shared/assets';
+import backgroundDevices from '@public/assets/images/background-devices.webp';
+import warning from '@public/assets/icons/warning.webp';
 import Link from 'next/link';
 import { DevicesCompatibleProps } from './DevicesCompatible.interface';
 import CardCompatibleDevices from './sub-components/DevicesCard/CardCompatibleDevices';
@@ -14,7 +15,7 @@ const DevicesCompatible: FC<DevicesCompatibleProps> = ({ brands, title, subtitle
       <section
         className="relative min-h-[650px] flex items-center justify-center bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage: `url(${images.backgroundDevices})`,
+          backgroundImage: `url(${backgroundDevices})`,
         }}
       >
         <div className="container pt-20 w-full max-w-[1036px] text-center transition-all ease-out">
@@ -37,7 +38,7 @@ const DevicesCompatible: FC<DevicesCompatibleProps> = ({ brands, title, subtitle
           <div className="max-w-[900px] mx-auto mb-8">
             <div className="flex items-start justify-center mb-8">
               <Image
-                src={icons.warning}
+                src={warning}
                 alt="Atenção"
                 width={24}
                 height={24}

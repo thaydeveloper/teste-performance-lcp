@@ -1,12 +1,12 @@
 'use client';
 import React from 'react';
 import Image from 'next/image';
-import { images } from '@shared/assets';
+import mainLogo2 from '@public/assets/images/main-logo2.webp';
 
 const HeaderLogo = () => {
   return (
     <Image
-      src={images.mainLogo2}
+      src={mainLogo2}
       alt="eSIM Logo"
       width={150}
       height={50}

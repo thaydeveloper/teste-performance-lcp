@@ -1,7 +1,8 @@
 import { FC, useRef, useEffect, useState } from 'react';
 import Image from 'next/image';
 import { DeviceBrand, DeviceModel } from '@/app/devices-compatible/DevicesCompatible.interface';
-import { icons } from '@/shared/assets';
+import openCard from '@public/assets/icons/open-card.webp';
+import devices from '@public/assets/icons/devices.webp';
 
 interface DevicesCardProps {
   brand: DeviceBrand;
@@ -34,14 +35,14 @@ const CardCompatibleDevices: FC<DevicesCardProps> = ({ brand }) => {
           <Image
             width={30}
             height={30}
-            src={brand.icon || icons.devices}
+            src={brand.icon || devices}
             alt={brand.name}
             className="w-12 h-12 mr-4"
           />{' '}
           <span className="sm:text-[24px] font-semibold text-[#262626]">{brand.name}</span>{' '}
         </div>
         <Image
-          src={icons.openCard}
+          src={openCard}
           alt={isOpen ? 'Recolher' : 'Expandir'}
           className={`h-8 w-8 mt-3 text-red-500 transition-transform duration-200 ease-in-out ${isOpen ? 'transform rotate-180' : ''}`}
           width={32}

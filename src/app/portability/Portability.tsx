@@ -1,7 +1,7 @@
 'use client';
 import React from 'react';
 import styles from '../page.module.css';
-import { images } from '@/shared/assets';
+import backgroundPortabilidade from '@public/assets/images/background-portabilidade.webp';
 import CardAttention from './sub-components/CardAttention';
 import SectionChangeChipContainer from './sub-components/SectionChangeChip';
 import SectionFactory from '@/factories/SectionFactory';
@@ -15,7 +15,7 @@ const Portability: React.FC = () => {
       <div
         className={`bg-cover bg-center bg-no-repeat h-[625px] mb-10`}
         style={{
-          backgroundImage: `linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.5) 38.82%, rgba(0,0,0,0.2) 64.47%, rgba(0,0,0,0) 100%), url(${images.backgroundPortabilidade})`,
+          backgroundImage: `linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.5) 38.82%, rgba(0,0,0,0.2) 64.47%, rgba(0,0,0,0) 100%), url(${backgroundPortabilidade})`,
         }}
       >
         <div className="flex flex-col items-center justify-center h-full p-4 text-white">

@@ -2,7 +2,7 @@
 
 import { useIsMobile } from '@/hooks/useMobile';
 import React, { useState, useEffect, useMemo, useRef } from 'react';
-import { icons } from '../assets'; // Certifique-se que icons.chevronDown existe
+import chevronDown from '@public/assets/icons/chevron-down.webp';
 import Image from 'next/image';
 import { SelectOption, SelectProps } from './select.interface';
 
@@ -112,7 +112,7 @@ const Select: React.FC<SelectProps> = ({
           <span className="block truncate">{selectedOption?.label || placeholder}</span>
           <div className="absolute inset-y-0 right-0 flex items-center px-3 pointer-events-none">
             <Image
-              src={icons.chevronDown}
+              src={chevronDown}
               alt="Expandir opções"
               width={14}
               height={14}
@@ -193,7 +193,7 @@ const Select: React.FC<SelectProps> = ({
           onClick={toggleDropdown} // Permite clicar no ícone para abrir/fechar
         >
           <Image
-            src={icons.chevronDown}
+            src={chevronDown}
             alt="Expandir opções"
             width={14}
             height={14}

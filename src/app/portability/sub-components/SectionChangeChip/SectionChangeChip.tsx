@@ -1,6 +1,7 @@
 'use client';
 import React, { useState } from 'react';
-import { icons } from '@/shared/assets';
+import arrowRight from '@public/assets/icons/arrow-right.webp';
+import warning from '@public/assets/icons/warning.webp';
 import Image from 'next/image';
 
 const regras = [
@@ -101,7 +102,7 @@ const SectionChangeChip: React.FC = () => {
               onClick={() => setShowModal(true)}
             >
               Analisar regras para a Portabilidade!
-              <Image src={icons.arrowRight} alt="Atenção" width={20} height={20} className="mr-2" />
+              <Image src={arrowRight} alt="Próximo passo" width={20} height={20} className="mr-2" />
             </button>
           </div>
 
@@ -164,13 +165,7 @@ const SectionChangeChip: React.FC = () => {
         )}
       </div>
       <div className="mt-6 flex items-center justify-center text-sm text-[#262626] p-3 w-full max-w-[586px] mx-4">
-        <Image
-          src={icons.warning}
-          alt="Atenção"
-          width={30}
-          height={30}
-          className="mr-2 flex-shrink-0"
-        />
+        <Image src={warning} alt="Atenção" width={30} height={30} className="mr-2 flex-shrink-0" />
         <span className="font-bold">
           ATENÇÃO: Antes de seguir com a compra, verifique se o seu dispositivo é compatível com
           eSIM.

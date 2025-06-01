@@ -1,7 +1,8 @@
 import React from 'react';
-import { icons } from '@/shared/assets';
 import Image from 'next/image';
+import devices from '@public/assets/icons/devices.webp';
 import { brandDetails } from './devices.constants';
+import openCard from '@public/assets/icons/open-card.webp';
 
 interface DevicesCardProps {
   brandName: 'APPLE' | 'ANDROID' | 'GOOGLE';
@@ -13,7 +14,7 @@ interface DevicesCardProps {
 const DevicesCard: React.FC<DevicesCardProps> = ({ brandName, devices, isOpen, onToggle }) => {
   const currentBrand = brandDetails[brandName];
 
-  const logoSrc = currentBrand?.logo || icons.devices;
+  const logoSrc = currentBrand?.logo || devices;
   const altText = currentBrand?.alt || 'Brand Logo';
 
   return (
@@ -31,7 +32,7 @@ const DevicesCard: React.FC<DevicesCardProps> = ({ brandName, devices, isOpen, o
           <span className="sm:text-[24px] font-semibold text-[#262626]">{brandName}</span>{' '}
         </div>
         <Image
-          src={icons.openCard}
+          src={openCard}
           alt={isOpen ? 'Recolher' : 'Expandir'}
           className={`h-8 w-8 mt-3 text-red-500 transition-transform duration-200 ease-in-out ${isOpen ? 'transform rotate-180' : ''}`}
           width={32}

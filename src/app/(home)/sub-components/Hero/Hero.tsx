@@ -1,7 +1,8 @@
 'use client';
 import React, { FC } from 'react';
 import Image from 'next/image';
-import { images } from '@shared/assets';
+import backgroundHome from '@public/assets/images/background-home.webp';
+
 import { ButtonCustom } from '@/shared';
 
 interface HeroProps {
@@ -23,7 +24,7 @@ const Hero: FC<HeroProps> = ({ description, buttonText }) => {
       }}
     >
       <Image
-        src={images.backgroundHome}
+        src={backgroundHome}
         alt="Pessoa usando aplicativo de eSIM no celular"
         width={1920}
         height={1080}

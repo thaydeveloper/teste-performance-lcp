@@ -1,6 +1,6 @@
 'use client';
 import { FC } from 'react';
-import { images } from '@shared/assets';
+import refundBackground from '@public/assets/images/refund-background.webp';
 import { Footer } from '@/shared';
 import { RefundPolicyProps } from './RefundPolicy.interface';
 import { RefundPolicyCard } from './sub-components';
@@ -12,7 +12,7 @@ const RefundPolicy: FC<RefundPolicyProps> = ({ data }) => (
       <section
         className="relative min-h-[650px] flex flex-col items-center bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage: `url(${images.refundBackground})`,
+          backgroundImage: `url(${refundBackground})`,
         }}
       >
         {/* Overlay preto translúcido */}

@@ -1,11 +1,12 @@
 import { FC } from 'react';
 
 import { Footer } from '@/shared';
-import { images, icons } from '@shared/assets';
+import backgroundFaq from '@public/assets/images/background-faq.webp';
 
 import { MoreQuestionProps } from './MoreQuestions.interface';
 import SendQuestion from './sub-components/SendQuestions/SendQuestion';
 import { FAQCard } from '@/shared/FaqCard';
+import openCard from '@public/assets/icons/open-card.webp';
 
 const MoreQuestions: FC<MoreQuestionProps> = ({ data, handleToggle, expandedId }) => (
   <section className="bg-white transition-all ease-out">
@@ -14,7 +15,7 @@ const MoreQuestions: FC<MoreQuestionProps> = ({ data, handleToggle, expandedId }
       <section
         className="relative min-h-[400px] sm:min-h-[690px] flex items-center justify-center bg-cover bg-center bg-no-repeat pt-12 sm:pt-16 pb-24 sm:pb-42 md:pb-40"
         style={{
-          backgroundImage: `url(${images.backgroundFaq})`,
+          backgroundImage: `url(${backgroundFaq})`,
         }}
       >
         <div className="container mx-auto px-4 w-full  max-w-4xl text-center transition-all ease-out">
@@ -38,7 +39,7 @@ const MoreQuestions: FC<MoreQuestionProps> = ({ data, handleToggle, expandedId }
                 item={item}
                 isExpanded={expandedId === index}
                 onToggle={() => handleToggle(index)}
-                icon={icons.openCard}
+                icon={openCard}
                 showSubQuestions={true}
                 showSidebar={false}
                 showLines={true}

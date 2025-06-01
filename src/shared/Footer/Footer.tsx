@@ -1,9 +1,15 @@
 'use client';
 import React, { FC, useState } from 'react';
 import Image from 'next/image';
+
+import footerLogo from '@public/assets/images/footer-logo.webp';
+import instagram from '@public/assets/icons/instagram.webp';
+import X from '@public/assets/icons/x.webp';
+import email from '@public/assets/icons/email.webp';
+import sites from '@public/assets/images/sites.webp';
+
 import Link from 'next/link';
 import { EMAIL_URL } from '@/constants/general.constants';
-import { images, icons } from '@shared/assets';
 
 const Footer: FC = () => {
   const [showPrivacyModal, setShowPrivacyModal] = useState(false);
@@ -20,7 +26,7 @@ const Footer: FC = () => {
         <div className="container flex flex-col items-center justify-between px-4 mx-auto lg:items-start sm:px-8 lg:flex-row">
           <div className="pb-8 lg:mb-0">
             <Image
-              src={images.footerLogo}
+              src={footerLogo}
               alt="eSIM Logo"
               width={150}
               height={50}
@@ -92,7 +98,7 @@ const Footer: FC = () => {
               rel="noopener noreferrer"
             >
               <Image
-                src={icons.instagram}
+                src={instagram}
                 alt="Instagram"
                 width={32}
                 height={32}
@@ -109,7 +115,7 @@ const Footer: FC = () => {
               rel="noopener noreferrer"
             >
               <Image
-                src={icons.X}
+                src={X}
                 alt="X"
                 width={32}
                 height={32}
@@ -127,7 +133,7 @@ const Footer: FC = () => {
               rel="noopener noreferrer"
             >
               <Image
-                src={icons.email}
+                src={email}
                 alt="Email"
                 width={32}
                 height={32}
@@ -173,7 +179,7 @@ const Footer: FC = () => {
 
           <div className="flex items-center justify-center w-full pt-8 mt-6">
             <Image
-              src={images.sites}
+              src={sites}
               alt="Sites Seguros e Formas de Pagamento"
               width={280}
               height={65}

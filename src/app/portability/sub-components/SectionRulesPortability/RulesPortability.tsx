@@ -1,7 +1,8 @@
 'use client';
 import React, { useState } from 'react';
-import { icons, images } from '@/shared/assets';
 import Image from 'next/image';
+
+import regras from '@public/assets/images/regras.webp';
 
 const RulesPortability: React.FC = () => {
   const [phoneNumber, setPhoneNumber] = useState('');
@@ -29,9 +30,9 @@ const RulesPortability: React.FC = () => {
       </div>
 
       <div className="mt-6 pb-40 flex items-center justify-center p-3 w-full">
-        {images.regras ? (
+        {regras ? (
           <Image
-            src={images.regras}
+            src={regras}
             alt="Regras para portabilidade"
             className="max-w-[997px] w-full h-auto"
             priority

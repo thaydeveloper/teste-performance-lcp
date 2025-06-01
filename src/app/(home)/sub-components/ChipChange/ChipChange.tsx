@@ -1,10 +1,12 @@
 'use client';
 import { useState, useCallback, useMemo } from 'react';
 import CardDegrade from '@/shared/CardDegrade';
-import images from '@/shared/assets/images';
+import designBackground1 from '@public/assets/images/design-background-1.webp';
+import designBackground2 from '@public/assets/images/design-background-2.webp';
 import { maskPhone } from '@/utils/maskPhone';
 import Image from 'next/image';
-import { icons } from '@/shared/assets';
+import arrowRightWhite from '@public/assets/icons/arrow-right-white.webp';
+
 import { operatorOptions } from '@/constants/options.constants';
 import { ButtonCustom, CheckboxInput, SelectInputContainer, TextInput } from '@/shared';
 
@@ -52,7 +54,7 @@ const ChipChangeSection: React.FC = () => {
       {/* Header Section */}
       <div className="relative w-full flex flex-col items-center h-[362px] bg-[#E60000] sm:pt-[30px] overflow-hidden pb-10">
         <Image
-          src={images.designBackground1}
+          src={designBackground1}
           alt="design esquerda new esim"
           className="absolute top-0 z-0 hidden w-auto h-auto sm:block left-10"
           style={{ pointerEvents: 'none' }}
@@ -63,7 +65,7 @@ const ChipChangeSection: React.FC = () => {
           height={163}
         />
         <Image
-          src={images.designBackground2}
+          src={designBackground2}
           alt="design direita new esim"
           className="absolute top-0 z-0 hidden w-auto h-auto sm:block right-10"
           style={{ pointerEvents: 'none' }}
@@ -121,7 +123,7 @@ const ChipChangeSection: React.FC = () => {
                     Analise regras para a troca de chip!
                   </a>
                   <Image
-                    src={icons.arrowRightWhite}
+                    src={arrowRightWhite}
                     loading="lazy"
                     fetchPriority="auto"
                     decoding="async"

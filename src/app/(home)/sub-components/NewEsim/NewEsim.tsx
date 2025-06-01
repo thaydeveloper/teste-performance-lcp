@@ -3,9 +3,11 @@ import { useState, useEffect } from 'react';
 import Image from 'next/image';
 
 import { dddsMap, estadosBrasileiros } from '@/constants/options.constants';
-import { icons, images } from '@/shared/assets';
 import { ButtonCustom, CardDegrade, CheckboxInput, SelectInputContainer } from '@/shared';
 import { SelectOption } from '@/shared/SelectCard/select.interface';
+
+import arrowrightwhite from '@public/assets/icons/arrow-right-white.webp';
+import companies from '@public/assets/images/companies.webp';
 
 const NewEsim: React.FC = () => {
   const [selectedState, setSelectedState] = useState<SelectOption | undefined>(undefined);
@@ -128,7 +130,7 @@ const NewEsim: React.FC = () => {
                     Analise regras para a troca de chip!
                   </a>
                   <Image
-                    src={icons.arrowRightWhite}
+                    src={arrowrightwhite}
                     loading="lazy"
                     fetchPriority="auto"
                     decoding="async"
@@ -186,7 +188,7 @@ const NewEsim: React.FC = () => {
         {/* Logo Bar */}
         <div className="flex justify-center w-full mt-4 sm:mt-8">
           <Image
-            src={images.companies}
+            src={companies}
             alt="Reclame Aqui"
             width={406}
             height={72}
