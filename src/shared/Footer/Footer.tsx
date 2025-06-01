@@ -4,7 +4,7 @@ import Image from 'next/image';
 
 import footerLogo from '@public/assets/images/footer-logo.webp';
 import instagram from '@public/assets/icons/instagram.webp';
-import X from '@public/assets/icons/x.webp';
+import X from '@public/assets/icons/X.webp';
 import email from '@public/assets/icons/email.webp';
 import sites from '@public/assets/images/sites.webp';
 
