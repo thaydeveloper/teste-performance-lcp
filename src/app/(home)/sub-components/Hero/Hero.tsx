@@ -28,10 +28,10 @@ const Hero: FC<HeroProps> = ({ description, buttonText }) => {
         width={1920}
         height={1080}
         priority={true}
-        quality={80}
+        quality={70}
         fetchPriority="high"
         decoding="async"
-        loading="eager"
+        loading="lazy"
         sizes="100vw"
         style={{
           objectFit: 'cover',
