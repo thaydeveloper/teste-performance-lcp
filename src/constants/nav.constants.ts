@@ -4,6 +4,8 @@ import { WHATSAPP_URL } from './general.constants';
 
 export const navItems: NavItem[] = [
   {
+    id: 'portability',
+    text: 'Portabilidade eSIM',
     href: '/portability',
     icon: icons.portability,
     alt: 'Portabilidade',
@@ -11,14 +13,26 @@ export const navItems: NavItem[] = [
     page: 'portability',
   },
   {
+    id: 'devices',
+    text: 'Dispositivos compatíveis',
     href: '#devices',
     icon: icons.devices,
     alt: 'Aparelhos',
     label: 'Dispositivos compatíveis',
     page: 'devices',
   },
-  { href: '/', icon: icons.home, alt: 'Pagina Inicial', label: 'Pagina Inicial', page: 'home' },
   {
+    id: 'home',
+    text: 'Página Inicial',
+    href: '/',
+    icon: icons.home,
+    alt: 'Página Inicial',
+    label: 'Página Inicial',
+    page: 'home',
+  },
+  {
+    id: 'faq',
+    text: 'FAQ',
     href: '/more-questions',
     icon: icons.faq,
     alt: 'Faq',
@@ -26,6 +40,8 @@ export const navItems: NavItem[] = [
     page: 'faq',
   },
   {
+    id: 'plans',
+    text: 'Cancelar compra',
     href: '/refund-policy',
     icon: icons.cancel,
     alt: 'Cancelar Compra',
@@ -33,6 +49,8 @@ export const navItems: NavItem[] = [
     page: 'plans',
   },
   {
+    id: 'contact',
+    text: 'Suporte',
     href: WHATSAPP_URL,
     icon: icons.support,
     alt: 'Suporte',

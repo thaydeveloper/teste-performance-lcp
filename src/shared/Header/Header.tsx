@@ -9,7 +9,11 @@ interface HeaderProps {
   activeSection: string;
   mobileOpen: boolean;
   setMobileOpen: (open: boolean) => void;
-  handleNavClick: (sectionId: string) => void;
+  handleNavClick: (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    item: NavItem,
+    closeMobile?: boolean,
+  ) => void;
 }
 
 const Header: React.FC<HeaderProps> = ({
@@ -42,9 +46,10 @@ const Header: React.FC<HeaderProps> = ({
 
           <nav className="hidden md:flex items-center space-x-8">
             {navItems.map((item) => (
-              <button
+              <a
                 key={item.id}
-                onClick={() => handleNavClick(item.id)}
+                href={item.href}
+                onClick={(e) => handleNavClick(e, item)}
                 className={`text-lg font-medium transition-colors ${
                   activeSection === item.id
                     ? 'text-[#FF2626]'
@@ -52,7 +57,7 @@ const Header: React.FC<HeaderProps> = ({
                 }`}
               >
                 {item.text}
-              </button>
+              </a>
             ))}
           </nav>
 
@@ -93,12 +98,10 @@ const Header: React.FC<HeaderProps> = ({
           <div className="container mx-auto px-4 py-4">
             <nav className="flex flex-col space-y-4">
               {navItems.map((item) => (
-                <button
+                <a
                   key={item.id}
-                  onClick={() => {
-                    handleNavClick(item.id);
-                    setMobileOpen(false);
-                  }}
+                  href={item.href}
+                  onClick={(e) => handleNavClick(e, item, true)}
                   className={`text-lg font-medium transition-colors ${
                     activeSection === item.id
                       ? 'text-[#FF2626]'
@@ -106,7 +109,7 @@ const Header: React.FC<HeaderProps> = ({
                   }`}
                 >
                   {item.text}
-                </button>
+                </a>
               ))}
             </nav>
           </div>
