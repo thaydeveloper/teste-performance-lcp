@@ -59,7 +59,8 @@
     "tailwindcss": "^4.1.7",
     "ts-node": "^10.9.2",
     "typescript": "^5.8.3",
-    "vercel": "^42.2.0"
+    "vercel": "^42.2.0",
+    "webpack-bundle-analyzer": "^4.10.2"
   },
   "packageManager": "pnpm@10.10.0",
   "browserslist": [
