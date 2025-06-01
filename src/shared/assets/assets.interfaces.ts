@@ -40,9 +40,6 @@ export type ProfileName =
   | 'profile8'
   | 'profile9';
 export type ImageName =
-  | 'advantage1'
-  | 'advantage2'
-  | 'advantage3'
   | 'backgroundDevices'
   | 'backgroundFaq'
   | 'backgroundHome'
@@ -52,13 +49,11 @@ export type ImageName =
   | 'designBackground2'
   | 'footerLogo'
   | 'mainLogo2'
-  | 'mainLogo3'
   | 'rectangleBackground2'
   | 'rectangleBackground'
   | 'refundBackground'
   | 'regras'
-  | 'sites'
-  | 'stepLine';
+  | 'sites';
 
 export interface Assets {
   icons: Record<IconName, string>;
