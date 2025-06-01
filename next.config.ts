@@ -44,24 +44,24 @@ const nextConfig: NextConfig = {
   headers: async () => {
     return [
       {
-        source: '/assets/images/*',
+        source: '/assets/images/:path*',
         headers: [
           { key: 'Cache-Control', value: 'public, max-age=31536000, immutable' },
-          { key: 'Accept', value: 'image/webp,' },
+          { key: 'Accept', value: 'image/webp' },
         ],
       },
       {
-        source: '/assets/icons/*',
+        source: '/assets/icons/:path*',
         headers: [
           { key: 'Cache-Control', value: 'public, max-age=31536000, immutable' },
-          { key: 'Accept', value: 'image/webp,' },
+          { key: 'Accept', value: 'image/webp' },
         ],
       },
       {
-        source: '/assets/profiles/*',
+        source: '/assets/profiles/:path*',
         headers: [
           { key: 'Cache-Control', value: 'public, max-age=31536000, immutable' },
-          { key: 'Accept', value: 'image/webp,' },
+          { key: 'Accept', value: 'image/webp' },
         ],
       },
       {
