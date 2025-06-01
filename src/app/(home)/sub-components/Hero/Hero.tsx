@@ -25,8 +25,8 @@ const Hero: FC<HeroProps> = ({ description, buttonText }) => {
       <Image
         src={images.backgroundHome}
         alt="Pessoa usando aplicativo de eSIM no celular"
-        width={1728}
-        height={625}
+        width={1920}
+        height={1080}
         priority={true}
         quality={70}
         fetchPriority="high"
