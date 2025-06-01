@@ -6,10 +6,8 @@ import { Header } from '@/shared';
 const HeroContainer = () => {
   const description = 'Aqui você pode ativar seu eSIM e trocar de chip sem precisar sair de casa.';
   const buttonText = [
-    {
-      text: 'Comprar Agora',
-      href: '#',
-    },
+    { text: 'Nova linha com eSIM', href: '#new-esim' },
+    { text: 'Trocar de chip agora', href: '#chip-change' },
   ];
 
   return (
