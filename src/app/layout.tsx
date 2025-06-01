@@ -1,51 +1,55 @@
 import '@/globals.css';
 import { Metadata } from 'next';
-import localFont from 'next/font/local';
+import { Roboto } from 'next/font/google';
 import { Analytics } from '@vercel/analytics/react';
 import { CookieConsent } from '@/shared';
+import { Suspense } from 'react';
+import CoreWebVitals from '@/shared/CoreWebVitals';
 
 import { SchemaBreadcrumb } from '@/SEO';
 import Head from 'next/head';
 import ClientOnly from '@/shared/ClientOnly';
-import { Suspense } from 'react';
-import CoreWebVitals from '@/shared/CoreWebVitals';
 
-const roboto = localFont({
-  src: [
-    {
-      path: '../fonts/Roboto-Regular.woff2',
-      weight: '400',
-      style: 'normal',
-    },
-    {
-      path: '../fonts/Roboto-Bold.woff2',
-      weight: '700',
-      style: 'normal',
-    },
-  ],
+const roboto = Roboto({
+  weight: ['400', '500', '700'],
+  subsets: ['latin'],
   display: 'swap',
-  style: 'normal',
-  variable: '--font-roboto',
-  fallback: ['sans-serif'],
+  preload: true,
+  fallback: ['system-ui', 'arial'],
+  adjustFontFallback: true,
 });
 
 export const metadata: Metadata = {
-  title: 'eSimFácil | Compre e Ative seu eSIM Claro ou Vivo Online',
-  description:
-    'Ative seu eSIM Claro ou Vivo 100% online com a eSimFácil. Troque seu chip físico ou adquira uma nova linha pré-paga sem sair de casa. Suporte rápido e seguro!',
+  title: 'eSIM Fácil - Sua conexão em qualquer lugar do mundo',
+  description: 'Compre seu eSIM e tenha internet em qualquer lugar do mundo',
   keywords: [
     'comprar eSIM Claro online',
-    'comprar eSIM Vivo online',
-    'ativar eSIM Claro',
     'ativar eSIM Vivo',
-    'eSIM Claro pré-pago',
-    'eSIM Vivo pré-pago',
-    'migrar chip Claro para eSIM',
-    'migrar chip Vivo para eSIM',
-    'dispositivos compatíveis com eSIM Claro',
-    'dispositivos compatíveis com eSIM Vivo',
-    'eSimFácil Claro',
-    'eSimFácil Vivo',
+    'eSIM pré-pago',
+    'trocar chip físico por eSIM',
+    'eSIM para iPhone',
+    'eSIM para Android',
+    'eSIM para Samsung',
+    'eSIM para Google Pixel',
+    'eSIM para Motorola',
+    'eSIM para Xiaomi',
+    'eSIM para Huawei',
+    'eSIM para OnePlus',
+    'eSIM para Asus',
+    'eSIM para Sony',
+    'eSIM para Nokia',
+    'eSIM para LG',
+    'eSIM para Apple Watch',
+    'eSIM para Samsung Watch',
+    'eSIM para Google Pixel Watch',
+    'eSIM para Motorola Watch',
+    'eSIM para Xiaomi Watch',
+    'eSIM para Huawei Watch',
+    'eSIM para OnePlus Watch',
+    'eSIM para Asus Watch',
+    'eSIM para Sony Watch',
+    'eSIM para Nokia Watch',
+    'eSIM para LG Watch',
   ],
   authors: [{ name: 'eSimFácil' }],
   creator: 'eSimFácil',
@@ -97,51 +101,48 @@ export const metadata: Metadata = {
   category: 'technology',
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="pt-BR">
+    <html lang="pt-BR" className={roboto.className}>
       <Head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link
+          rel="preload"
+          href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
+          as="style"
+        />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
+          rel="stylesheet"
+        />
         <link rel="preconnect" href="https://vercel.live" />
-        {/* Removido o preload da imagem para não competir com o LCP do texto */}
-        {/* 
-        <link
-          rel="preload"
-          as="image"
-          href="/assets/images/background-home.webp"
-          type="image/webp"
-        />
-        */}
-        {/* Preload da fonte para garantir que o texto carregue rapidamente */}
-        <link
-          rel="preload"
-          href="../fonts/Roboto-Bold.woff2"
-          as="font"
-          type="font/woff2"
-          crossOrigin="anonymous"
-        />
+        <link rel="dns-prefetch" href="https://vercel.live" />
+        <link rel="preconnect" href="https://www.clarity.ms" />
+        <link rel="dns-prefetch" href="https://www.clarity.ms" />
+
         <style
           dangerouslySetInnerHTML={{
             __html: `
-            h1 {
+            :root {
+              --font-roboto: ${roboto.style.fontFamily};
+            }
+            h1, h2, h3, h4, h5, h6 {
               font-display: swap;
               text-rendering: optimizeSpeed;
               -webkit-font-smoothing: antialiased;
             }
             .hero-container {
               contain: layout style paint;
-              content-visibility: visible;
+              content-visibility: auto;
             }
           `,
           }}
         />
         <SchemaBreadcrumb />
       </Head>
-      <body className={`${roboto.className} ${roboto.variable} flex flex-col min-h-screen`}>
-        <Suspense fallback={<div>Loading...</div>}>
+      <body className={`${roboto.className} flex flex-col min-h-screen`}>
+        <Suspense fallback={null}>
           <main className="flex-grow">{children}</main>
         </Suspense>
         <ClientOnly>

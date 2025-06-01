@@ -1,6 +1,7 @@
 'use client';
+import dynamic from 'next/dynamic';
+import { Suspense } from 'react';
 import { FC, useState, useCallback } from 'react';
-import Header from './Header';
 import { images } from '@shared/assets';
 import { NavItem } from './Header.interface';
 import { navItems } from '@/constants/nav.constants';
@@ -21,6 +22,11 @@ const debounce = <T extends (...args: unknown[]) => void>(
     }, delay);
   };
 };
+
+const Header = dynamic(() => import('./Header'), {
+  ssr: false,
+  loading: () => <div className="h-[80px] bg-white animate-pulse" />,
+});
 
 const HeaderContainer: FC = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -61,14 +67,16 @@ const HeaderContainer: FC = () => {
   if (!mounted) return null;
 
   return (
-    <Header
-      navItems={navItems}
-      mark={images.mainLogo2}
-      activeSection={activeSection}
-      mobileOpen={mobileOpen}
-      setMobileOpen={setMobileOpen}
-      handleNavClick={handleNavClick}
-    />
+    <Suspense fallback={<div className="h-[80px] bg-white animate-pulse" />}>
+      <Header
+        navItems={navItems}
+        mark={images.mainLogo2}
+        activeSection={activeSection}
+        mobileOpen={mobileOpen}
+        setMobileOpen={setMobileOpen}
+        handleNavClick={handleNavClick}
+      />
+    </Suspense>
   );
 };
 

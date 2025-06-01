@@ -17,19 +17,19 @@ const nextConfig: NextConfig = {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'esimfacil.com.br',
+        hostname: 'teste-performance-lcp.vercel.app',
         port: '',
         pathname: '/assets/images/**',
       },
       {
         protocol: 'https',
-        hostname: 'esimfacil.com.br',
+        hostname: 'teste-performance-lcp.vercel.app',
         port: '',
         pathname: '/assets/icons/**',
       },
       {
         protocol: 'https',
-        hostname: 'esimfacil.com.br',
+        hostname: 'teste-performance-lcp.vercel.app',
         port: '',
         pathname: '/assets/profiles/**',
       },
@@ -44,24 +44,24 @@ const nextConfig: NextConfig = {
   headers: async () => {
     return [
       {
-        source: '/assets/images/:path*',
+        source: '/assets/images/*',
         headers: [
           { key: 'Cache-Control', value: 'public, max-age=31536000, immutable' },
-          { key: 'Accept', value: 'image/webp,image/avif,image/*' },
+          { key: 'Accept', value: 'image/webp,' },
         ],
       },
       {
-        source: '/assets/icons/:path*',
+        source: '/assets/icons/*',
         headers: [
           { key: 'Cache-Control', value: 'public, max-age=31536000, immutable' },
-          { key: 'Accept', value: 'image/webp,image/avif,image/*' },
+          { key: 'Accept', value: 'image/webp,' },
         ],
       },
       {
-        source: '/assets/profiles/:path*',
+        source: '/assets/profiles/*',
         headers: [
           { key: 'Cache-Control', value: 'public, max-age=31536000, immutable' },
-          { key: 'Accept', value: 'image/webp,image/avif,image/*' },
+          { key: 'Accept', value: 'image/webp,' },
         ],
       },
       {
