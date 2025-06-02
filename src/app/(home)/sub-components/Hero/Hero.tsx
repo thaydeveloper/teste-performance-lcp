@@ -51,10 +51,13 @@ const Hero: FC<HeroProps> = ({ description, buttonText }) => {
           </h1>
           <p className="mb-8 sm:mb-16 text-[24px] md:text-xl">{description}</p>
         </div>
-        <div className="w-full md:w-[680px] flex flex-col md:flex-row gap-4 md:gap-10 p-0 justify-center items-center">
+        <div className="w-full md:w-[680px] flex flex-col md:flex-row  gap-14 p-0 justify-center items-center">
           {buttonText?.map((btn, index) => (
-            <ButtonCustom className="w-[300px]" key={index} variant="tertiary">
-              <a href={btn.href} className="w-full h-full flex items-center justify-center">
+            <ButtonCustom className="w-[350px]" key={index} variant="tertiary">
+              <a
+                href={btn.href}
+                className="w-full text-shadow-lg text-2xl h-full flex items-center justify-center"
+              >
                 {btn.text}
               </a>
             </ButtonCustom>

@@ -149,8 +149,12 @@ const Footer: FC = () => {
 
           <div className="flex flex-col items-center w-full gap-6 lg:flex-row lg:justify-between lg:gap-0">
             <div className="relative text-center lg:text-left">
-              <p className="pb-1 text-sm">Idioma</p>
+              <label htmlFor="language" className="pb-1 text-sm">
+                Idioma
+              </label>
               <select
+                id="language"
+                aria-label="Idioma"
                 value={language}
                 onChange={(e) => setLanguage(e.target.value)}
                 className="appearance-none bg-black text-white px-4 py-2 pr-8 rounded border border-white focus:outline-none focus:border-[#FF2626] cursor-pointer text-sm"
