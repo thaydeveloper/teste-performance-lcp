@@ -53,7 +53,7 @@ const Hero: FC<HeroProps> = ({ description, buttonText }) => {
         </div>
         <div className="w-full md:w-[680px] flex flex-col md:flex-row  gap-14 p-0 justify-center items-center">
           {buttonText?.map((btn, index) => (
-            <ButtonCustom className="w-[350px]" key={index} variant="tertiary">
+            <ButtonCustom className="w-[350px] h-[80px]" key={index} variant="tertiary">
               <a
                 href={btn.href}
                 className="w-full text-shadow-lg text-2xl h-full flex items-center justify-center"
