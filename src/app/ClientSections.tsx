@@ -23,11 +23,6 @@ const NewEsim = dynamic(() => import('./(home)/sub-components/NewEsim/NewEsim'),
   loading: () => <div className="min-h-[300px] bg-gray-50 animate-pulse" />,
 });
 
-const ChipChange = dynamic(() => import('./(home)/sub-components/ChipChange/ChipChange'), {
-  ssr: false,
-  loading: () => <div className="min-h-[550px] bg-gray-50 animate-pulse" />,
-});
-
 export default function ClientSections() {
   return (
     <>
@@ -57,13 +52,6 @@ export default function ClientSections() {
           <SectionFactory id="devices" className="bg-white min-h-[550px]">
             <Suspense fallback={<div className="min-h-[550px] bg-gray-50 animate-pulse" />}>
               <Devices />
-            </Suspense>
-          </SectionFactory>
-        </div>
-        <div className="relative shadow-xl mx-auto max-w-[1117px]">
-          <SectionFactory id="chip-change" className="bg-white min-h-[550px]">
-            <Suspense fallback={<div className="min-h-[550px] bg-gray-50 animate-pulse" />}>
-              <ChipChange />
             </Suspense>
           </SectionFactory>
         </div>

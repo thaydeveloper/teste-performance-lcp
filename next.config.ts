@@ -75,7 +75,7 @@ const nextConfig: NextConfig = {
   experimental: {
     optimizeCss: true,
     optimizePackageImports: ['@vercel/analytics', 'react-query'],
-    esmExternals: 'loose',
+    // esmExternals: 'loose',
   },
   turbopack: {
     resolveExtensions: ['.mdx', '.tsx', '.ts', '.jsx', '.js', '.json'],

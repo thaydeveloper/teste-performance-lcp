@@ -16,6 +16,7 @@ const NewEsim: React.FC = () => {
   const [showAlert, setShowAlert] = useState(false);
   const [termsAccepted, setTermsAccepted] = useState(false);
   const [showModal, setShowModal] = useState(false);
+  const [isNewEsim, setIsNewEsim] = useState(true);
 
   const handleSelectChange = (option: SelectOption) => {
     setSelectedState(option);
@@ -72,116 +73,244 @@ const NewEsim: React.FC = () => {
 
       {/* Conteúdo principal */}
       <div className="container px-4 max-w-[1117px] flex flex-col items-center py-8 space-y-8">
-        {/* Título com destaque */}
-        <div className="text-center space-y-2 max-w-[669px]">
-          <h2 className="text-xl sm:text-3xl text-[#262626] font-bold">
-            Chip virtual <span className="text-[#E60000] font-bold">PRÉ-PAGO</span> com{' '}
-            <span className="text-[#E60000] font-bold">NOVA LINHA</span>
-          </h2>
-          <h3 className="text-xl sm:text-3xl text-[#262626] font-bold">em minutos!</h3>
-          <p className="text-gray-600 mt-4 text-[24px]">
-            Experimente a liberdade e agilidade do eSIM
-          </p>
+        {/* Switch de opções */}
+        <div className="flex items-center justify-center space-x-4 mb-8">
+          <button
+            onClick={() => setIsNewEsim(true)}
+            className={`px-6 py-2 rounded-full font-semibold transition-colors ${
+              isNewEsim ? 'bg-[#E60000] text-white' : 'bg-gray-200 text-gray-600 hover:bg-gray-300'
+            }`}
+          >
+            Nova Linha
+          </button>
+          <button
+            onClick={() => setIsNewEsim(false)}
+            className={`px-6 py-2 rounded-full font-semibold transition-colors ${
+              !isNewEsim ? 'bg-[#E60000] text-white' : 'bg-gray-200 text-gray-600 hover:bg-gray-300'
+            }`}
+          >
+            Trocar Chip
+          </button>
         </div>
 
-        {/* Card de Ativação */}
+        {/* Título com destaque */}
+        <div className="text-center space-y-2 max-w-[669px]">
+          {isNewEsim ? (
+            <>
+              <h2 className="text-xl sm:text-3xl text-[#262626] font-bold">
+                Chip virtual <span className="text-[#E60000] font-bold">PRÉ-PAGO</span> com{' '}
+                <span className="text-[#E60000] font-bold">NOVA LINHA</span>
+              </h2>
+              <h3 className="text-xl sm:text-3xl text-[#262626] font-bold">em minutos!</h3>
+              <p className="text-gray-600 mt-4 text-[24px]">
+                Experimente a liberdade e agilidade do eSIM
+              </p>
+            </>
+          ) : (
+            <>
+              <h2 className="text-xl sm:text-3xl text-[#262626] font-bold">
+                Troque seu chip por <span className="text-[#E60000] font-bold">eSIM</span>
+              </h2>
+              <h3 className="text-xl sm:text-3xl text-[#262626] font-bold">em poucos passos!</h3>
+              <p className="text-gray-600 mt-4 text-[24px]">
+                Mantenha seu número e ganhe mais praticidade
+              </p>
+            </>
+          )}
+        </div>
+
+        {/* Cards */}
         <div className="flex items-center justify-center w-full">
           <div className="w-[586px]">
-            <CardDegrade
-              title="Ative o seu eSIM agora!"
-              subtitle="Por favor, escolha um estado para começar."
-              className="mx-auto"
-            >
-              <div className="space-y-4">
-                <SelectInputContainer
-                  id="estado"
-                  label="Escolha o estado para ativar seu eSIM:"
-                  options={estadosBrasileiros}
-                  placeholder="Digite ou selecione um estado..."
-                  onChange={(selectedValue) => {
-                    setSelectedState(estadosBrasileiros.find((opt) => opt.value === selectedValue));
-                    setSelectedDdd(undefined);
-                    setDdds(dddsMap[selectedValue as keyof typeof dddsMap] || []);
-                  }}
-                  value={selectedState?.value}
-                />
-                <SelectInputContainer
-                  id="ddd"
-                  label="Escolha o DDD para sua nova linha eSIM:"
-                  options={ddds}
-                  placeholder="Digite ou selecione um DDD..."
-                  onChange={(selectedValue) =>
-                    setSelectedDdd(ddds.find((opt) => opt.value === selectedValue))
-                  }
-                  value={selectedDdd?.value}
-                  disabled={
-                    !selectedState ||
-                    ddds.length === 0 ||
-                    (!estadosBrasileiros.find((est) => est.value === selectedState?.value) &&
-                      !selectedState?.label)
-                  }
-                  onFocus={() => setSelectedDdd(undefined)}
-                />
-                <div
-                  onClick={() => setShowModal(true)}
-                  className="flex items-center justify-end gap-2 pt-2 text-center cursor-pointer"
-                >
-                  <a className="text-sm text-white underline hover:text-red-200">
-                    Analise regras para a troca de chip!
-                  </a>
-                  <Image
-                    src={arrowrightwhite}
-                    loading="lazy"
-                    fetchPriority="auto"
-                    decoding="async"
-                    alt="Informações"
-                    width={24}
-                    height={24}
-                    sizes="24px"
+            {isNewEsim ? (
+              <CardDegrade
+                title="Ative o seu eSIM agora!"
+                subtitle="Por favor, escolha um estado para começar."
+                className="mx-auto"
+              >
+                <div className="space-y-4">
+                  <SelectInputContainer
+                    id="estado"
+                    label="Escolha o estado para ativar seu eSIM:"
+                    options={estadosBrasileiros}
+                    placeholder="Digite ou selecione um estado..."
+                    onChange={(selectedValue) => {
+                      setSelectedState(
+                        estadosBrasileiros.find((opt) => opt.value === selectedValue),
+                      );
+                      setSelectedDdd(undefined);
+                      setDdds(dddsMap[selectedValue as keyof typeof dddsMap] || []);
+                    }}
+                    value={selectedState?.value}
                   />
-                </div>
-                <div className="flex justify-center">
-                  <CheckboxInput
-                    id="termos_esim"
-                    label={
-                      <>
-                        Eu concordo com os{' '}
-                        <a
-                          href="/refund-policy"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-white underline hover:text-gray-200"
-                        >
-                          Termos e Condições
-                        </a>
-                        !
-                      </>
+                  <SelectInputContainer
+                    id="ddd"
+                    label="Escolha o DDD para sua nova linha eSIM:"
+                    options={ddds}
+                    placeholder="Digite ou selecione um DDD..."
+                    onChange={(selectedValue) =>
+                      setSelectedDdd(ddds.find((opt) => opt.value === selectedValue))
                     }
-                    checked={termsAccepted}
-                    onChange={(e) => setTermsAccepted(e.target.checked)}
+                    value={selectedDdd?.value}
+                    disabled={
+                      !selectedState ||
+                      ddds.length === 0 ||
+                      (!estadosBrasileiros.find((est) => est.value === selectedState?.value) &&
+                        !selectedState?.label)
+                    }
+                    onFocus={() => setSelectedDdd(undefined)}
                   />
-                </div>
-                <div className="flex justify-center">
-                  <ButtonCustom
-                    variant={
-                      !selectedState || !selectedDdd || !termsAccepted ? 'disabled' : 'secondary'
-                    }
-                    className="w-[260px] sm:w-[300px]"
-                    onClick={handleButtonClick}
-                    disabled={!selectedState || !selectedDdd || !termsAccepted}
+                  <div
+                    onClick={() => setShowModal(true)}
+                    className="flex items-center justify-end gap-2 pt-2 text-center cursor-pointer"
                   >
-                    Ativar meu eSIM!
-                  </ButtonCustom>
-                </div>
-                {showAlert && (
-                  <div className="flex justify-center w-full">
-                    <div className="p-3 mt-2 text-sm text-yellow-700 bg-yellow-100 border-l-4 border-yellow-500 rounded shadow-lg">
-                      Por favor, selecione o estado, o DDD e aceite os termos antes de avançar.
-                    </div>
+                    <a className="text-sm text-white underline hover:text-red-200">
+                      Analise regras para a troca de chip!
+                    </a>
+                    <Image
+                      src={arrowrightwhite}
+                      loading="lazy"
+                      fetchPriority="auto"
+                      decoding="async"
+                      alt="Informações"
+                      width={24}
+                      height={24}
+                      sizes="24px"
+                    />
                   </div>
-                )}
-              </div>
-            </CardDegrade>
+                  <div className="flex justify-center">
+                    <CheckboxInput
+                      id="termos_esim"
+                      label={
+                        <>
+                          Eu concordo com os{' '}
+                          <a
+                            href="/refund-policy"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-white underline hover:text-gray-200"
+                          >
+                            Termos e Condições
+                          </a>
+                          !
+                        </>
+                      }
+                      checked={termsAccepted}
+                      onChange={(e) => setTermsAccepted(e.target.checked)}
+                    />
+                  </div>
+                  <div className="flex justify-center">
+                    <ButtonCustom
+                      variant={
+                        !selectedState || !selectedDdd || !termsAccepted ? 'disabled' : 'secondary'
+                      }
+                      className="w-[260px] sm:w-[300px]"
+                      onClick={handleButtonClick}
+                      disabled={!selectedState || !selectedDdd || !termsAccepted}
+                    >
+                      Ativar meu eSIM!
+                    </ButtonCustom>
+                  </div>
+                  {showAlert && (
+                    <div className="flex justify-center w-full">
+                      <div className="p-3 mt-2 text-sm text-yellow-700 bg-yellow-100 border-l-4 border-yellow-500 rounded shadow-lg">
+                        Por favor, selecione o estado, o DDD e aceite os termos antes de avançar.
+                      </div>
+                    </div>
+                  )}
+                </div>
+              </CardDegrade>
+            ) : (
+              <CardDegrade
+                title="Troque pelo eSIM agora!"
+                subtitle="Insira os dados abaixo para começar."
+                inverseGradient
+              >
+                <div className="space-y-4">
+                  <SelectInputContainer
+                    id="operadora"
+                    label="Escolha sua operadora:"
+                    options={estadosBrasileiros}
+                    placeholder="Digite ou selecione uma operadora..."
+                    onChange={(selectedValue) => {
+                      setSelectedState(
+                        estadosBrasileiros.find((opt) => opt.value === selectedValue),
+                      );
+                    }}
+                    value={selectedState?.value}
+                  />
+                  <SelectInputContainer
+                    id="ddd"
+                    label="Escolha o DDD da sua linha:"
+                    options={ddds}
+                    placeholder="Digite ou selecione um DDD..."
+                    onChange={(selectedValue) =>
+                      setSelectedDdd(ddds.find((opt) => opt.value === selectedValue))
+                    }
+                    value={selectedDdd?.value}
+                    disabled={!selectedState}
+                  />
+                  <div
+                    onClick={() => setShowModal(true)}
+                    className="flex items-center justify-end gap-2 pt-2 text-center cursor-pointer"
+                  >
+                    <a className="text-sm text-white underline hover:text-red-200">
+                      Analise regras para a troca de chip!
+                    </a>
+                    <Image
+                      src={arrowrightwhite}
+                      loading="lazy"
+                      fetchPriority="auto"
+                      decoding="async"
+                      alt="Informações"
+                      width={24}
+                      height={24}
+                      sizes="24px"
+                    />
+                  </div>
+                  <div className="flex justify-center">
+                    <CheckboxInput
+                      id="termos_esim"
+                      label={
+                        <>
+                          Eu concordo com os{' '}
+                          <a
+                            href="/refund-policy"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-white underline hover:text-gray-200"
+                          >
+                            Termos e Condições
+                          </a>
+                          !
+                        </>
+                      }
+                      checked={termsAccepted}
+                      onChange={(e) => setTermsAccepted(e.target.checked)}
+                    />
+                  </div>
+                  <div className="flex justify-center">
+                    <ButtonCustom
+                      variant={
+                        !selectedState || !selectedDdd || !termsAccepted ? 'disabled' : 'secondary'
+                      }
+                      className="w-[260px] sm:w-[300px]"
+                      onClick={handleButtonClick}
+                      disabled={!selectedState || !selectedDdd || !termsAccepted}
+                    >
+                      Trocar meu chip!
+                    </ButtonCustom>
+                  </div>
+                  {showAlert && (
+                    <div className="flex justify-center w-full">
+                      <div className="p-3 mt-2 text-sm text-yellow-700 bg-yellow-100 border-l-4 border-yellow-500 rounded shadow-lg">
+                        Por favor, preencha todos os campos e aceite os termos antes de avançar.
+                      </div>
+                    </div>
+                  )}
+                </div>
+              </CardDegrade>
+            )}
           </div>
         </div>
 
@@ -199,12 +328,14 @@ const NewEsim: React.FC = () => {
           />
         </div>
       </div>
+
+      {/* Modal de Regras */}
       {showModal && (
         <div
           className="fixed inset-0 flex items-center justify-center z-1000"
           style={{ background: 'rgba(203,213,225,0.5)' }}
         >
-          <div className={`bg-white rounded-lg shadow-lg max-w-md w-full p-6 relative `}>
+          <div className="bg-white rounded-lg shadow-lg max-w-md w-full p-6 relative">
             <h3 className="text-lg font-bold mb-4 text-[#E60000]">Regras para a troca de chip</h3>
             <ol className="space-y-3 text-gray-800">
               {regras.map((regra, idx) => (
