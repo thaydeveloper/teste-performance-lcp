@@ -1,4 +1,4 @@
-import { Advantages, ChipChange, Devices, FAQ, NewEsim } from '@/app/(home)/sub-components';
+import { Advantages, Devices, FAQ, NewEsim } from '@/app/(home)/sub-components';
 
 export const sections = [
   {
@@ -19,11 +19,6 @@ export const sections = [
   {
     component: Devices,
     id: 'devices',
-    className: 'bg-white min-h-[550px] relative mx-auto shadow-xl max-w-[1117px]',
-  },
-  {
-    component: ChipChange,
-    id: 'chip-change',
     className: 'bg-white min-h-[550px] relative mx-auto shadow-xl max-w-[1117px]',
   },
 ];
