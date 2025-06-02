@@ -32,11 +32,11 @@ const ButtonCustom: React.FC<ButtonCustomProps> = ({
       className={`
         
         max-w-[350px]
-        h-[60px]
+        h-[80px]
         rounded-xl
         text-center
         font-semibold
-        text-lg
+        text-2xl
         transition
         duration-150
         ease-in-out
